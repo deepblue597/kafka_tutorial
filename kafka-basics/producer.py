@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     config = {
         # User-specific properties that you must set
-        'bootstrap.servers': "localhost:19092" ,
+        'bootstrap.servers': "localhost:9092" ,
         # 'localhost:45627',
 
         # Fixed properties
@@ -32,7 +32,7 @@ if __name__ == '__main__':
                 topic=msg.topic(), key=msg.key().decode('utf-8'), value=msg.value().decode('utf-8')))
 
     # Produce data by selecting random values from these lists.
-    topic = "purchases"
+    topic = "tester_topic"
     user_ids = ['eabara', 'jsmith', 'sgarcia', 'jbernard', 'htanaka', 'awalther']
     products = ['book', 'alarm clock', 't-shirts', 'gift card', 'batteries']
 
