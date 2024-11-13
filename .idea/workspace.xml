@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="882db9e0-21d5-4492-9d06-50ec600fdc8a" name="Changes" comment="kafka basics">
-      <change afterPath="$PROJECT_DIR$/kafka-basics/producerwithcallback.py" afterDir="false" />
+    <list default="true" id="882db9e0-21d5-4492-9d06-50ec600fdc8a" name="Changes" comment="consumer producer creation">
+      <change afterPath="$PROJECT_DIR$/kafka-basics/consumer2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kafka-basics/consumerpartitionStrategy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_world_ex/consumer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_world_ex/consumer2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_world_ex/producer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_world_ex/producer_v2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kafka-basics/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-basics/consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-basics/producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-basics/producer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,28 +50,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.consumer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.producer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.producerwithcallback.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/jason/kafka-beginners-course&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;bigdataide_conn_settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.consumer (1).executor": "Run",
+    "Python.consumer.executor": "Run",
+    "Python.consumer2 (1).executor": "Run",
+    "Python.consumer2.executor": "Run",
+    "Python.consumerpartitionStrategy.executor": "Run",
+    "Python.producer (1).executor": "Run",
+    "Python.producer.executor": "Run",
+    "Python.producer_v2.executor": "Run",
+    "Python.producerwithcallback.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/jason/kafka_python/real_world_ex",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "bigdataide_conn_settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python.consumer">
-    <configuration name="consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="kafka-basics" />
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/real_world_ex" />
+      <recent name="$PROJECT_DIR$/kafka-basics" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.producer_v2">
+    <configuration name="consumer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="kafka_python" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,12 +94,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/kafka-basics" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/real_world_ex" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kafka-basics/consumer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/real_world_ex/consumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -89,8 +108,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="kafka-basics" />
+    <configuration name="consumer2 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="kafka_python" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,12 +117,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/kafka-basics" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/real_world_ex" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kafka-basics/producer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/real_world_ex/consumer2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,7 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="producerwithcallback" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="consumerpartitionStrategy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="kafka-basics" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,7 +145,53 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kafka-basics/producerwithcallback.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kafka-basics/consumerpartitionStrategy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="producer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="kafka_python" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/real_world_ex" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/real_world_ex/producer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="producer_v2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="kafka_python" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/real_world_ex" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/real_world_ex/producer_v2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,9 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.consumer" />
-        <item itemvalue="Python.producerwithcallback" />
-        <item itemvalue="Python.producer" />
+        <item itemvalue="Python.producer_v2" />
+        <item itemvalue="Python.producer (1)" />
+        <item itemvalue="Python.consumer2 (1)" />
+        <item itemvalue="Python.consumer (1)" />
+        <item itemvalue="Python.consumerpartitionStrategy" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +229,8 @@
       <workItem from="1730884881219" duration="1147000" />
       <workItem from="1730886043123" duration="6529000" />
       <workItem from="1731405125249" duration="9082000" />
-      <workItem from="1731494337621" duration="1336000" />
+      <workItem from="1731494337621" duration="6239000" />
+      <workItem from="1731512892343" duration="7008000" />
     </task>
     <task id="LOCAL-00001" summary="kafka basics">
       <option name="closed" value="true" />
@@ -172,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730928704566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="consumer producer creation">
+      <option name="closed" value="true" />
+      <created>1731495944624</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731495944625</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,11 +256,29 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="kafka basics" />
-    <option name="LAST_COMMIT_MESSAGE" value="kafka basics" />
+    <MESSAGE value="consumer producer creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="consumer producer creation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/kafka-basics/consumerpartitionStrategy.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/kafka_python$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1731495035108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kafka-basics" />
+    <SUITE FILE_PATH="coverage/kafka_python$producer_v2.coverage" NAME="producer_v2 Coverage Results" MODIFIED="1731520170408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/real_world_ex" />
+    <SUITE FILE_PATH="coverage/kafka_python$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1731496764707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kafka-basics" />
     <SUITE FILE_PATH="coverage/kafka_python$producer.coverage" NAME="producer Coverage Results" MODIFIED="1731408022194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kafka-basics" />
-    <SUITE FILE_PATH="coverage/kafka_python$producerwithcallback.coverage" NAME="producerwithcallback Coverage Results" MODIFIED="1731495023000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kafka-basics" />
+    <SUITE FILE_PATH="coverage/kafka_python$consumer2.coverage" NAME="consumer2 Coverage Results" MODIFIED="1731496768178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kafka-basics" />
+    <SUITE FILE_PATH="coverage/kafka_python$consumerpartitionStrategy.coverage" NAME="consumerpartitionStrategy Coverage Results" MODIFIED="1731498995603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kafka-basics" />
+    <SUITE FILE_PATH="coverage/kafka_python$producer__1_.coverage" NAME="producer (1) Coverage Results" MODIFIED="1731518856707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/real_world_ex" />
+    <SUITE FILE_PATH="coverage/kafka_python$consumer2__1_.coverage" NAME="consumer2 (1) Coverage Results" MODIFIED="1731514756231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/real_world_ex" />
+    <SUITE FILE_PATH="coverage/kafka_python$consumer__1_.coverage" NAME="consumer (1) Coverage Results" MODIFIED="1731514710381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/real_world_ex" />
+    <SUITE FILE_PATH="coverage/kafka_python$producerwithcallback.coverage" NAME="producerwithcallback Coverage Results" MODIFIED="1731497977870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/kafka-basics" />
   </component>
 </project>

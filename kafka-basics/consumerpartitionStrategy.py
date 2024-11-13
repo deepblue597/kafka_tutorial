@@ -11,7 +11,9 @@ if __name__ == '__main__':
 
         # Fixed properties
         'group.id':          'kafka-python-getting-started',
-        'auto.offset.reset': 'earliest'
+        'auto.offset.reset': 'earliest',
+        # cannot make it work
+        #'partition.assignment.strategy': 'org.apache.kafka.clients.consumer.CooperativeStickyAssignor'
     }
     # none means if we don't have existing consumer group we fail. we must set consumer group
     # earliest read from the beginning of my topic

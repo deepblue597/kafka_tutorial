@@ -11,7 +11,9 @@ if __name__ == '__main__':
 
         # Fixed properties
         'group.id':          'kafka-python-getting-started',
-        'auto.offset.reset': 'earliest'
+        'auto.offset.reset': 'earliest',
+        # cannot make it work
+        #'partition.assignment.strategy': 'org.apache.kafka.clients.consumer.CooperativeStickyAssignor'
     }
     # none means if we don't have existing consumer group we fail. we must set consumer group
     # earliest read from the beginning of my topic
@@ -21,7 +23,7 @@ if __name__ == '__main__':
     consumer = Consumer(config)
 
     # Subscribe to topic
-    topic = "tester_topic"
+    topic = "wikipedia-events"
     consumer.subscribe([topic])
 
     # Poll for new messages from Kafka and print them.
@@ -37,8 +39,8 @@ if __name__ == '__main__':
                 print("ERROR: %s".format(msg.error()))
             else:
                 # Extract the (optional) key and value, and print.
-                print("Consumed event from topic {topic}: partition {partition} offset {offset} key = {key:12} value = {value:12} at time = {time}".format(
-                    topic=msg.topic(), partition = msg.partition(), offset= msg.offset() ,key=msg.key().decode('utf-8'), value=msg.value().decode('utf-8'), time=datetime.datetime.fromtimestamp(msg.timestamp()[1]/1000)))
+                print("Consumed event from topic {topic}: partition {partition} offset {offset}  value = {value:12} at time = {time}".format(
+                    topic=msg.topic(), partition = msg.partition(), offset= msg.offset() , value=msg.value().decode('utf-8'), time=datetime.datetime.fromtimestamp(msg.timestamp()[1]/1000)))
     except KeyboardInterrupt:
         pass
     finally:
