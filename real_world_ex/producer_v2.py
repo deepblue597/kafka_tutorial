@@ -3,21 +3,24 @@ import argparse
 
 from confluent_kafka import Producer
 from sseclient import SSEClient as EventSource
+#from kafka import RoundRobinPartitioner
 
 
-
-# https://kafka-python.readthedocs.io/en/master/apidoc/KafkaProducer.html
-def create_kafka_producer(bootstrap_server, acks):
+# https://docs.confluent.io/platform/current/clients/producer.html
+# https://docs.confluent.io/platform/current/installation/configuration/producer-configs.html
+def create_kafka_producer(bootstrap_server, acks , linger_ms = 0  , batch_size = 16 * 1024 , compression_type = None):
     config = {
         # User-specific properties that you must set
         'bootstrap.servers': bootstrap_server ,
-        # 'localhost:45627',
+        #'partitioner': RoundRobinPartitioner,
 
-        # Fixed properties
-        'acks': acks,
+        'acks': acks, # 0 1 all|-1
         #'value.serializer': lambda x: json.dumps(x).encode('utf-8')
-        #'batch.size': 1 * 1024, #default 16Kb
-        #'linger.ms': 500,  # Wait up to 500ms for the batch to fill before sending
+        'batch.size': batch_size, #default 16Kb
+        #' delivery.timeout.ms' : 120000 ( default 2 mins )
+        #'enable.idempotence': True (default)
+        'linger.ms': linger_ms,  # Wait up to x ms for the batch to fill before sending default 0
+        'compression.type' : compression_type #None ( default )
 
     }
 
@@ -44,11 +47,12 @@ def construct_event(event_data, user_types):
                     "domain": event_data['meta']['domain'],
                     "namespace": event_data['namespace'],
                     "title": event_data['title'],
-                    #"comment": event_data['comment'],
+                    "comment": event_data['comment'],
                     "timestamp": event_data['meta']['dt'],#event_data['timestamp'],
                     "user_name": event_data['user'],
-                    #"user_type": user_type,
-                    #"minor": event_data['minor'],
+                    "user_type": user_type,
+                    "minor": event_data['minor'],
+                    #"type": event_data['type'],
                     "old_length": event_data['length']['old'],
                     "new_length": event_data['length']['new']}).encode('utf-8')
 
@@ -86,7 +90,7 @@ def parse_command_line_arguments():
 
     parser.add_argument('--bootstrap_server', default='localhost:9092', help='Kafka bootstrap broker(s) (host[:port])', type=str)
     parser.add_argument('--topic_name', default='wikipedia-events', help='Destination topic name', type=str)
-    parser.add_argument('--events_to_produce', help='Kill producer after n events have been produced', type=int, default=1000)
+    parser.add_argument('--events_to_produce', help='Kill producer after n events have been produced', type=int, default=100)
 
     return parser.parse_args()
 
@@ -103,7 +107,7 @@ if __name__ == "__main__":
     args = parse_command_line_arguments()
 
     # init producer
-    producer = create_kafka_producer(args.bootstrap_server , acks='all')
+    producer = create_kafka_producer(bootstrap_server= args.bootstrap_server , acks='all' , linger_ms=20 , batch_size= 32 * 1024 , compression_type='snappy')
 
     # init dictionary of namespaces
     namespace_dict = init_namespaces()
@@ -129,11 +133,11 @@ if __name__ == "__main__":
                     # construct valid json event
                     event_to_send = construct_event(event_data, user_types)
 
-                    producer.produce('wikipedia-events', value=event_to_send, callback=delivery_callback)
+                    producer.produce(args.topic_name , value=event_to_send, callback=delivery_callback)
                     # Polling to handle responses
                     # do we need these ?
                     producer.poll(0)
-                    producer.flush()  # Ensure the producer sends the message before proceeding
+                    #producer.flush()  # Ensure the producer sends the message before proceeding
 
                     messages_count += 1
 

@@ -3,15 +3,14 @@ import datetime
 
 from confluent_kafka import Consumer
 
-if __name__ == '__main__':
-
+def create_kafka_consumer(server , offset , groupId):
     config = {
         # User-specific properties that you must set
-        'bootstrap.servers': 'localhost:9092',
+        'bootstrap.servers': server,
 
         # Fixed properties
-        'group.id':          'kafka-python-getting-started',
-        'auto.offset.reset': 'earliest',
+        'group.id':          groupId,
+        'auto.offset.reset': offset,
         # cannot make it work
         #'partition.assignment.strategy': 'org.apache.kafka.clients.consumer.CooperativeStickyAssignor'
     }
@@ -19,9 +18,14 @@ if __name__ == '__main__':
     # earliest read from the beginning of my topic
     # latest i want to read from just now and only the new messages.
 
-    # Create Consumer instance
     consumer = Consumer(config)
+    return consumer
 
+if __name__ == '__main__':
+
+
+
+    consumer = create_kafka_consumer('localhost:9092' , 'earliest' ,'kafka-python-getting-started' )
     # Subscribe to topic
     topic = "wikipedia-events"
     consumer.subscribe([topic])
