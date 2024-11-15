@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kafka-basics/kafka-basics.iml" filepath="$PROJECT_DIR$/kafka-basics/kafka-basics.iml" />
       <module fileurl="file://$PROJECT_DIR$/kafka_python.iml" filepath="$PROJECT_DIR$/kafka_python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opensearch/opensearch.iml" filepath="$PROJECT_DIR$/opensearch/opensearch.iml" />
     </modules>
   </component>
 </project>
