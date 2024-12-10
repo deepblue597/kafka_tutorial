@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  broker:
+    image: apache/kafka:latest
+    container_name: kafka_plaintext
+    hostname: kafka_broker
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093 , BROKER://kafka_broker:19092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092, BROKER://kafka_broker:19092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT , BROKER:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 3
+    ports:
+      - "9092:9092"
+    volumes:
+      - ./data/kafka:/var/lib/kafka/data
+
+  kafka-ui:
+    container_name: kafka-ui
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "8081:8080" # Expose Kafka UI on localhost:8080
+    depends_on:
+      - broker # Ensure the broker starts first
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka_broker:19092
+      DYNAMIC_CONFIG_ENABLED: "true"
